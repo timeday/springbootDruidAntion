@@ -1,13 +1,16 @@
 package com.example.jdbc.demo.config;
 
 public class DataSourceContextHolder {
+
+    private DataSourceContextHolder(){}
+
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();
 
     public static synchronized void setDBType(String dbType){
         contextHolder.set(dbType);
     }
 
-    public static String getDBType(){
+    public static synchronized String getDBType(){
         return contextHolder.get();
     }
 

@@ -93,7 +93,6 @@ public class DataSourceConfig {
         try {
             defaultDataSource.setFilters(filters);
         } catch (SQLException e) {
-            System.err.println("druid configuration initialization filter: "+ e);
         }
         defaultDataSource.setConnectionProperties(connectionProperties);
 
@@ -120,7 +119,6 @@ public class DataSourceConfig {
         try {
             masterDataSource.setFilters(filters);
         } catch (SQLException e) {
-            System.err.println("druid configuration initialization filter: "+ e);
         }
         masterDataSource.setConnectionProperties(connectionProperties);
 
@@ -149,8 +147,7 @@ public class DataSourceConfig {
 
     @Bean(name = "sqlSessionTemplate")
     public SqlSessionTemplate sqlSessionTemplate(
-            @Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory)
-            throws Exception {
+            @Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
