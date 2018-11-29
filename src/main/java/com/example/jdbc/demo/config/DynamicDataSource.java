@@ -5,9 +5,6 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by YHYR on 2017-12-25
- */
 
 public class DynamicDataSource extends AbstractRoutingDataSource {
     private static DynamicDataSource instance;

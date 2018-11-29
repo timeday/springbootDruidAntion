@@ -1,9 +1,5 @@
 package com.example.jdbc.demo.config;
 
-/**
- * Created by YHYR on 2017-12-25
- */
-
 public class DataSourceContextHolder {
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();
 
